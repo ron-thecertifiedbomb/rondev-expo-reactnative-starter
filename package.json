@@ -8,7 +8,6 @@
     "start:android": "npx expo run:android",
     "dev": "npm run adb:restart && npx expo start --android",
     "dev:clean": "npm run adb:restart && npx expo start --clear --android",
-    "android": "npx expo run:android",
     "ios": "npx expo run:ios",
     "web": "npx expo start --web",
     "studio": "start \"\" \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Android Studio\\Android Studio.lnk\" .\\android",
