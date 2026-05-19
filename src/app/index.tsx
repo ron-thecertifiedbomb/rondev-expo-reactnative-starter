@@ -1,70 +1,78 @@
-import { View, Text, TouchableOpacity, Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 
-export default function TestScreen() {
+const ACCENT = "#00e0ff";
+
+export default function HomeScreen() {
   return (
-    <View className="flex-1 bg-neutral-950 items-center justify-center px-6">
+    <View className="flex-1 bg-black px-6 justify-center">
       <StatusBar style="light" />
+      {/* Top Micro Label */}
+      <Text
+        className="text-[10px] tracking-[3px] mb-6"
+        style={{ color: ACCENT }}
+      >
+        AI • AUTOMATION • SYSTEMS
+      </Text>
 
-      {/* Main Container */}
-      <View className="w-full bg-neutral-900 border border-neutral-800 rounded-3xl p-8 items-center shadow-2xl">
+      {/* Logo */}
+      {/* <Image
+        source={require('@/assets/images/rondevlogo.png')}
+        className="w-20 h-20 mb-6"
+        resizeMode="contain"
+      /> */}
 
-        {/* Place this snippet inside your TestScreen component render method */}
-        <View className="w-full bg-neutral-900 border border-neutral-800 rounded-3xl p-8 items-center shadow-2xl">
+      {/* Headline (dominant like your reference) */}
+      <Text className="text-[36px] leading-tight font-black text-neutral-200">
+        Building scalable{"\n"}
+        software systems{"\n"}
+        <Text className="text-neutral-400">
+          for real-world businesses.
+        </Text>
+      </Text>
 
-          {/* Brand Logo Integration */}
-          <Image
-            source={require('@/assets/images/rondevlogo.png')}
-            className="w-20 h-20"
-            resizeMode="contain"
-          />
+      {/* Description */}
+      <Text className="text-neutral-500 mt-6 text-sm leading-relaxed">
+        Rondev helps businesses automate operations, manage bookings,
+        and streamline workflows using modern digital systems and
+        AI-assisted tools — built to scale with your growth.
+      </Text>
 
-          {/* Domain Label */}
-          <Text className="text-xs font-mono tracking-widest text-neutral-500 uppercase mb-3 text-center">
-            rondev.com.ph
+      {/* Feature Strip (subtle, not pills anymore) */}
+      <View className="flex-row flex-wrap gap-x-4 gap-y-2 mt-6">
+        {[
+          "Bookings",
+          "Automation",
+          "AI Workflows",
+          "Dashboards",
+        ].map((item) => (
+          <Text
+            key={item}
+            className="text-xs text-neutral-600"
+          >
+            {item}
           </Text>
+        ))}
+      </View>
 
-          {/* Premium Headline */}
-          <Text className="text-3xl font-black tracking-tight text-white mb-4 text-center leading-none">
-            Elite Mobile{"\n"}
-            <Text className="text-neutral-400">Development</Text>
-          </Text>
+      {/* CTAs */}
+      <View className="flex-row items-center gap-3 mt-10">
 
-          {/* Pitch / Capabilities List */}
-          <Text className="text-sm text-neutral-400 font-normal mb-6 text-center leading-relaxed">
-            We engineer high-performance iOS and Android applications. From fluid NativeWind architectures to scalable backend systems, we turn your product vision into production-grade code.
-          </Text>
-
-          {/* ... rest of your tags and buttons remain exactly the same ... */}
-        </View>
-
-        {/* Service Badges */}
-        <View className="flex-row flex-wrap justify-center gap-2 mb-8">
-          <View className="bg-neutral-800 border border-neutral-700 px-3 py-1 rounded-full">
-            <Text className="text-xs text-neutral-300 font-medium">React Native</Text>
-          </View>
-          <View className="bg-neutral-800 border border-neutral-700 px-3 py-1 rounded-full">
-            <Text className="text-xs text-neutral-300 font-medium">Tailwind CSS</Text>
-          </View>
-          <View className="bg-neutral-800 border border-neutral-700 px-3 py-1 rounded-full">
-            <Text className="text-xs text-neutral-300 font-medium">Cross-Platform</Text>
-          </View>
-        </View>
-
-        {/* Call to Action Button */}
+        {/* Primary */}
         <TouchableOpacity
-          activeOpacity={0.8}
-          className="w-full bg-white py-4 rounded-xl items-center justify-center shadow-md active:bg-neutral-200"
+          activeOpacity={0.85}
+          style={{ backgroundColor: ACCENT }}
+          className="px-5 py-4 rounded-xl"
         >
-          <Text className="text-neutral-950 font-bold text-sm tracking-wide">
-            Book a Consultation
+          <Text className="text-black font-semibold text-xs tracking-wide">
+            Initiate Project Request
           </Text>
         </TouchableOpacity>
 
-        {/* Secondary Link */}
-        <TouchableOpacity activeOpacity={0.7} className="mt-4">
-          <Text className="text-xs text-neutral-500 font-medium underline">
-            Explore Our Portfolio
+        {/* Secondary */}
+        <TouchableOpacity activeOpacity={0.7}>
+          <Text className="text-neutral-500 text-xs">
+            View demos →
           </Text>
         </TouchableOpacity>
 
